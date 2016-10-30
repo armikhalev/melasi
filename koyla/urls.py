@@ -1,11 +1,7 @@
-from django.conf.urls import url, include
-from rest_framework import routers
+from django.conf.urls import url
 from . import views
 
-#router = routers.DefaultRouter()
-#router.register(r'koyla', views.KoylaSet)
-
 urlpatterns = [
-#    url(r'^/(?P<word>.+)/$', include(router.urls))
-	    url(r'^(?P<word>.+)/$', views.KoylaSet.as_view())
+	    url('^english/(?P<word>.+)/$', views.EngSet.as_view()),
+	    url('^mela/(?P<la>.+)/$', views.MelaSet.as_view()),
 ]
